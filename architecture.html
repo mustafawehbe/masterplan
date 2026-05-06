@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masterplan — Architecture</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="main">
+  <div class="page-header">
+    <div class="page-header-top">
+      <div class="page-icon">⬡</div>
+      <h2>Architecture</h2>
+    </div>
+    <p>System design, tech stack, infrastructure, and data flow.</p>
+  </div>
+
+  <!-- System Overview -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">System Overview</span>
+      <span class="badge badge-muted">Edit me</span>
+    </div>
+    <div class="placeholder">
+      <strong>✦ Placeholder —</strong> Describe the overall system at a high level. What are the major components? How do they interact? What is the core loop — how does data flow from input to output? Include a diagram description or ASCII diagram if helpful.
+    </div>
+    <div class="edit-hint">✎ &nbsp;Open <code>architecture.html</code> to fill in each section with your real architecture details.</div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Tech Stack</span>
+      <span class="badge badge-blue">Technologies</span>
+    </div>
+    <div class="grid-3">
+      <div class="arch-block">
+        <div class="arch-block-label">Frontend</div>
+        <ul class="arch-list">
+          <li>— Framework (e.g. React / Next.js)</li>
+          <li>— Styling (e.g. Tailwind)</li>
+          <li>— State management</li>
+          <li>— Hosting (e.g. Vercel)</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Backend</div>
+        <ul class="arch-list">
+          <li>— Runtime (e.g. Node / Python)</li>
+          <li>— Framework (e.g. FastAPI)</li>
+          <li>— Auth (e.g. Clerk / Auth0)</li>
+          <li>— API style (REST / GraphQL)</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Data & AI</div>
+        <ul class="arch-list">
+          <li>— Database (e.g. PostgreSQL)</li>
+          <li>— Vector DB (e.g. Pinecone)</li>
+          <li>— LLM (e.g. Claude API)</li>
+          <li>— Analytics (e.g. PostHog)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:0;">
+      <div class="arch-block">
+        <div class="arch-block-label">Infrastructure</div>
+        <ul class="arch-list">
+          <li>— Cloud (e.g. AWS / GCP)</li>
+          <li>— Containers (e.g. Docker)</li>
+          <li>— CI/CD (e.g. GitHub Actions)</li>
+          <li>— Monitoring (e.g. Datadog)</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Integrations</div>
+        <ul class="arch-list">
+          <li>— Payment (e.g. Stripe)</li>
+          <li>— Email (e.g. Resend)</li>
+          <li>— Storage (e.g. S3)</li>
+          <li>— — Add your integrations —</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Security</div>
+        <ul class="arch-list">
+          <li>— Auth protocol</li>
+          <li>— Encryption at rest/transit</li>
+          <li>— Rate limiting</li>
+          <li>— Secrets management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Flow -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Data Flow</span>
+      <span class="badge badge-muted">Edit me</span>
+    </div>
+    <div class="placeholder">
+      <strong>✦ Placeholder —</strong> Walk through the data flow step by step. Example: (1) User submits input via UI → (2) API validates and queues request → (3) Worker processes with LLM → (4) Result stored in DB → (5) User notified. Be explicit about where data lives and moves.
+    </div>
+    <div class="divider"></div>
+    <div class="card-title" style="margin-bottom:12px; font-size:13px;">Key Data Entities</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th>Description</th>
+            <th>Storage</th>
+            <th>Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>User</td><td>— describe —</td><td>— e.g. PostgreSQL —</td><td>— e.g. Auth token —</td></tr>
+          <tr><td>Entity 2</td><td>— describe —</td><td>— fill in —</td><td>— fill in —</td></tr>
+          <tr><td>Entity 3</td><td>— describe —</td><td>— fill in —</td><td>— fill in —</td></tr>
+          <tr><td>Entity 4</td><td>— describe —</td><td>— fill in —</td><td>— fill in —</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Infrastructure Diagram -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Infrastructure Diagram</span>
+      <span class="badge badge-muted">Edit me</span>
+    </div>
+    <div class="placeholder" style="font-family: 'SF Mono', monospace; font-style: normal; font-size: 12px; line-height: 1.9; text-align: left;">
+<pre style="color: var(--text-muted); background: none; border: none; padding:0;">
+  ┌─────────────────────────────────────────────────┐
+  │                   Internet                       │
+  └────────────────────┬────────────────────────────┘
+                       │
+  ┌────────────────────▼────────────────────────────┐
+  │            CDN / Load Balancer                   │  ← fill in your provider
+  └──────────────┬──────────────────────────────────┘
+                 │
+  ┌──────────────▼──────────┐  ┌────────────────────┐
+  │   Frontend (Web App)    │  │  API / Backend      │  ← fill in
+  │   — framework here —    │  │  — runtime here —   │
+  └─────────────────────────┘  └──────────┬──────────┘
+                                           │
+                              ┌────────────▼──────────┐
+                              │   Database / Storage   │  ← fill in
+                              └────────────────────────┘
+
+  ✦  Replace this placeholder with your real infrastructure diagram.
+</pre>
+    </div>
+  </div>
+
+  <!-- Security Model -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Security Model</span>
+      <span class="badge badge-orange">Important</span>
+    </div>
+    <div class="grid-2">
+      <div class="arch-block">
+        <div class="arch-block-label">Authentication & Authorization</div>
+        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
+          <strong>✦</strong> How are users authenticated? How are permissions enforced? What roles exist?
+        </div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Data Protection</div>
+        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
+          <strong>✦</strong> Encryption in transit (TLS), at rest, key management. What data is PII? How is it handled?
+        </div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Compliance</div>
+        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
+          <strong>✦</strong> GDPR, SOC2, HIPAA, or other compliance requirements relevant to your business.
+        </div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Threat Model</div>
+        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
+          <strong>✦</strong> Key risks and mitigations. What are your main attack vectors and how are they addressed?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scalability -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Scalability & Constraints</span>
+      <span class="badge badge-muted">Edit me</span>
+    </div>
+    <div class="placeholder">
+      <strong>✦ Placeholder —</strong> What are the current bottlenecks? At what scale does the architecture need to change? What are the known limitations of the current design and what does the v2 architecture look like?
+    </div>
+  </div>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

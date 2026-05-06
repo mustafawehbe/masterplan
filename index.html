@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masterplan — Overview</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar"></aside>
+
+<main class="main">
+  <div class="page-header">
+    <div class="page-header-top">
+      <div class="page-icon">⊞</div>
+      <h2>Overview</h2>
+    </div>
+    <p>Your living masterplan — strategy, architecture, and financials in one place.</p>
+    <div class="page-meta">
+      <span class="meta-tag">⬤ &nbsp;Live</span>
+      <span class="meta-tag">Updated on push to GitHub</span>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid-4">
+    <div class="stat-card">
+      <div class="stat-label">Sections</div>
+      <div class="stat-value">4</div>
+      <div class="stat-sub">All documented</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Status</div>
+      <div class="stat-value" style="font-size:20px; color: var(--accent-light);">In Progress</div>
+      <div class="stat-sub">Building phase</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Last Push</div>
+      <div class="stat-value" id="last-push" style="font-size:18px;">—</div>
+      <div class="stat-sub">GitHub Pages</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Version</div>
+      <div class="stat-value">v1.0</div>
+      <div class="stat-sub">Initial release</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Section nav cards -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">All Sections</span>
+      <span class="badge badge-orange">4 sections</span>
+    </div>
+    <div class="grid-2">
+      <a href="business-plan.html" class="section-card">
+        <div class="section-card-icon">◈</div>
+        <div class="section-card-title">Business Plan</div>
+        <div class="section-card-desc">Executive summary, problem & solution, target market, revenue model, go-to-market strategy, and team.</div>
+        <span class="section-card-arrow">→</span>
+      </a>
+      <a href="financial.html" class="section-card">
+        <div class="section-card-icon">◉</div>
+        <div class="section-card-title">Financial Statements</div>
+        <div class="section-card-desc">Income statement, balance sheet, cash flow, financial projections, and key KPIs.</div>
+        <span class="section-card-arrow">→</span>
+      </a>
+      <a href="architecture.html" class="section-card">
+        <div class="section-card-icon">⬡</div>
+        <div class="section-card-title">Architecture</div>
+        <div class="section-card-desc">System overview, tech stack, infrastructure, data flow, and security model.</div>
+        <span class="section-card-arrow">→</span>
+      </a>
+      <a href="roadmap.html" class="section-card">
+        <div class="section-card-icon">◷</div>
+        <div class="section-card-title">Roadmap</div>
+        <div class="section-card-desc">Quarterly milestones, long-term vision, and strategic priorities.</div>
+        <span class="section-card-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Mission -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Mission Statement</span>
+      <span class="badge badge-muted">Edit me</span>
+    </div>
+    <div class="placeholder">
+      <strong>✦ Placeholder —</strong> Write your mission statement here. What is the core purpose of this venture? What problem are you solving and for whom? One to three sentences that define everything else.
+    </div>
+    <div class="edit-hint">
+      ✎ &nbsp;Open <code>index.html</code> and replace this placeholder with your mission statement.
+    </div>
+  </div>
+
+  <!-- Quick notes -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Key Priorities</span>
+      <span class="badge badge-muted">Edit me</span>
+    </div>
+    <div class="placeholder">
+      <strong>✦ Placeholder —</strong> List your top 3–5 current priorities. What must happen this month / this quarter for this to move forward? Be specific.
+    </div>
+  </div>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+  document.getElementById('last-push').textContent = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+</script>
+</body>
+</html>
