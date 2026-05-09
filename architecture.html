@@ -16,82 +16,232 @@
       <div class="page-icon">⬡</div>
       <h2>Architecture</h2>
     </div>
-    <p>System design, tech stack, infrastructure, and data flow.</p>
+    <p>System design, tech stack, infrastructure, data flow, and integrations across all 5 business verticals.</p>
   </div>
 
   <!-- System Overview -->
   <div class="card">
     <div class="card-header">
       <span class="card-title">System Overview</span>
-      <span class="badge badge-muted">Edit me</span>
+      <span class="badge badge-orange">5 Verticals · 1 Platform</span>
     </div>
-    <div class="placeholder">
-      <strong>✦ Placeholder —</strong> Describe the overall system at a high level. What are the major components? How do they interact? What is the core loop — how does data flow from input to output? Include a diagram description or ASCII diagram if helpful.
+    <div class="card-body" style="margin-bottom:16px;">
+      The platform is the connective tissue of the entire padel ecosystem. Every vertical — club operations, franchise network, wellness, equipment, and tournaments — flows through a single unified system. The app is the player-facing layer. The dashboard is the operator layer. AWS UAE region ensures data residency compliance and low latency for GCC users.
     </div>
-    <div class="edit-hint">✎ &nbsp;Open <code>architecture.html</code> to fill in each section with your real architecture details.</div>
+    <div style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; color: var(--text-muted); background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 20px; line-height: 2;">
+<pre style="background:none; border:none; padding:0; color:inherit; overflow-x:auto;">
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                        PLAYER / CUSTOMER                           │
+  └──────────┬──────────────────────────────────────┬──────────────────┘
+             │  Mobile App (iOS + Android)           │  Web App
+  ┌──────────▼───────────────────────────────────────▼──────────────────┐
+  │                    API Gateway  (AWS API Gateway)                   │
+  │              Auth · Rate Limiting · Routing · Logging               │
+  └──────┬───────────┬──────────────┬──────────────┬────────────────────┘
+         │           │              │              │
+  ┌──────▼───┐ ┌─────▼──────┐ ┌────▼──────┐ ┌────▼──────────┐
+  │ Booking  │ │ Wellness   │ │ Commerce  │ │  Tournament   │
+  │ Service  │ │ Service    │ │ Service   │ │  Service      │
+  │ Courts   │ │ HBOT/Sauna │ │ Equipment │ │  Brackets     │
+  │ Sessions │ │ Ice Bath   │ │ F&B       │ │  Leaderboards │
+  └──────┬───┘ └─────┬──────┘ └────┬──────┘ └────┬──────────┘
+         │           │              │              │
+  ┌──────▼───────────▼──────────────▼──────────────▼──────────────────┐
+  │                    Core Data Layer                                 │
+  │     PostgreSQL (primary)  ·  Redis (cache)  ·  S3 (media)        │
+  └─────────────────────────────────────────────────────────────────┬──┘
+                                                                    │
+  ┌─────────────────────────────────────────────────────────────────▼──┐
+  │                   Operator Dashboard (Web)                         │
+  │        Club Mgmt · Franchise Portal · Analytics · CRM             │
+  └────────────────────────────────────────────────────────────────────┘
+</pre>
+    </div>
   </div>
 
   <!-- Tech Stack -->
   <div class="card">
     <div class="card-header">
       <span class="card-title">Tech Stack</span>
-      <span class="badge badge-blue">Technologies</span>
+      <span class="badge badge-blue">Chosen for Speed, Scale & UAE Compliance</span>
     </div>
     <div class="grid-3">
       <div class="arch-block">
-        <div class="arch-block-label">Frontend</div>
+        <div class="arch-block-label">Mobile App</div>
         <ul class="arch-list">
-          <li>— Framework (e.g. React / Next.js)</li>
-          <li>— Styling (e.g. Tailwind)</li>
-          <li>— State management</li>
-          <li>— Hosting (e.g. Vercel)</li>
+          <li><strong style="color:var(--text-primary);">React Native</strong> — iOS + Android from one codebase</li>
+          <li>Expo for fast iteration and OTA updates</li>
+          <li>React Navigation for routing</li>
+          <li>Zustand for state management</li>
+          <li>Firebase Push Notifications</li>
         </ul>
       </div>
       <div class="arch-block">
-        <div class="arch-block-label">Backend</div>
+        <div class="arch-block-label">Backend API</div>
         <ul class="arch-list">
-          <li>— Runtime (e.g. Node / Python)</li>
-          <li>— Framework (e.g. FastAPI)</li>
-          <li>— Auth (e.g. Clerk / Auth0)</li>
-          <li>— API style (REST / GraphQL)</li>
+          <li><strong style="color:var(--text-primary);">Node.js + Express</strong> — REST API</li>
+          <li>JWT + OAuth2 for authentication</li>
+          <li>Prisma ORM for database access</li>
+          <li>Bull + Redis for job queues</li>
+          <li>WebSockets for live scores/brackets</li>
         </ul>
       </div>
       <div class="arch-block">
-        <div class="arch-block-label">Data & AI</div>
+        <div class="arch-block-label">Web Dashboard (Operator)</div>
         <ul class="arch-list">
-          <li>— Database (e.g. PostgreSQL)</li>
-          <li>— Vector DB (e.g. Pinecone)</li>
-          <li>— LLM (e.g. Claude API)</li>
-          <li>— Analytics (e.g. PostHog)</li>
+          <li><strong style="color:var(--text-primary);">Next.js</strong> — Operator + franchise portal</li>
+          <li>Tailwind CSS for UI</li>
+          <li>Recharts for analytics</li>
+          <li>Role-based access (owner / manager / staff)</li>
+          <li>Real-time court availability view</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Database & Storage</div>
+        <ul class="arch-list">
+          <li><strong style="color:var(--text-primary);">PostgreSQL</strong> — primary (RDS on AWS)</li>
+          <li>Redis — session cache + booking locks</li>
+          <li>Amazon S3 — media, profiles, content</li>
+          <li>ElasticSearch — player + club search</li>
+          <li>TimescaleDB — time-series analytics</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Cloud Infrastructure</div>
+        <ul class="arch-list">
+          <li><strong style="color:var(--text-primary);">AWS Middle East (UAE)</strong> — data residency</li>
+          <li>ECS Fargate — containerised services</li>
+          <li>CloudFront CDN — global asset delivery</li>
+          <li>Route 53 — DNS + health checks</li>
+          <li>Auto-scaling on peak booking times</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">AI & Intelligence</div>
+        <ul class="arch-list">
+          <li><strong style="color:var(--text-primary);">Claude API</strong> — coaching insights + chat</li>
+          <li>Custom ML model — player matchmaking</li>
+          <li>Recommendation engine — session + wellness</li>
+          <li>Demand forecasting — court scheduling</li>
+          <li>Analytics pipeline via Segment + Mixpanel</li>
         </ul>
       </div>
     </div>
-    <div class="grid-3" style="margin-top:0;">
+  </div>
+
+  <!-- App Features -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">App Features — Player Experience</span>
+      <span class="badge badge-orange">iOS + Android</span>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="arch-block">
+          <div class="arch-block-label">Court & Wellness Booking</div>
+          <ul class="arch-list">
+            <li>Real-time court availability calendar</li>
+            <li>HBOT, sauna, ice bath session booking</li>
+            <li>Recurring booking slots for members</li>
+            <li>Waitlist + automatic slot notifications</li>
+            <li>In-app payment (Telr / Apple Pay / Google Pay)</li>
+          </ul>
+        </div>
+        <div class="arch-block" style="margin-top:10px;">
+          <div class="arch-block-label">Player Profile & Stats</div>
+          <ul class="arch-list">
+            <li>Skill rating (ELO-based, auto-calculated)</li>
+            <li>Match history and win/loss record</li>
+            <li>Wellness session log (HBOT, recovery)</li>
+            <li>Leaderboard — club, city, GCC</li>
+            <li>Coaching notes and improvement plan</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="arch-block">
+          <div class="arch-block-label">Matchmaking & Social</div>
+          <ul class="arch-list">
+            <li>AI-powered opponent matching by skill level</li>
+            <li>Open game requests — find 1, 2, or 3 players</li>
+            <li>Friend groups and private bookings</li>
+            <li>In-app chat and match coordination</li>
+            <li>Challenge mode — ranked matches</li>
+          </ul>
+        </div>
+        <div class="arch-block" style="margin-top:10px;">
+          <div class="arch-block-label">Tournaments & Leagues</div>
+          <ul class="arch-list">
+            <li>Tournament registration + bracket view</li>
+            <li>Live score entry and updates</li>
+            <li>Seasonal league tables</li>
+            <li>Amateur → Pro pathway tracking</li>
+            <li>Push alerts for match times + results</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Integrations -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Key Integrations</span>
+      <span class="badge badge-blue">UAE-first stack</span>
+    </div>
+    <div class="grid-3">
       <div class="arch-block">
-        <div class="arch-block-label">Infrastructure</div>
+        <div class="arch-block-label">Payments</div>
         <ul class="arch-list">
-          <li>— Cloud (e.g. AWS / GCP)</li>
-          <li>— Containers (e.g. Docker)</li>
-          <li>— CI/CD (e.g. GitHub Actions)</li>
-          <li>— Monitoring (e.g. Datadog)</li>
+          <li><strong style="color:var(--text-primary);">Telr</strong> — primary UAE payment gateway</li>
+          <li>Apple Pay + Google Pay (in-app)</li>
+          <li>Stripe — international / franchise billing</li>
+          <li>Tabby / Tamara — BNPL option</li>
         </ul>
       </div>
       <div class="arch-block">
-        <div class="arch-block-label">Integrations</div>
+        <div class="arch-block-label">Club Operations</div>
         <ul class="arch-list">
-          <li>— Payment (e.g. Stripe)</li>
-          <li>— Email (e.g. Resend)</li>
-          <li>— Storage (e.g. S3)</li>
-          <li>— — Add your integrations —</li>
+          <li>Access control — smart door locks per court</li>
+          <li>RFID / QR wristbands for members</li>
+          <li>POS system — F&B + equipment shop</li>
+          <li>HBOT machine API — session tracking</li>
         </ul>
       </div>
       <div class="arch-block">
-        <div class="arch-block-label">Security</div>
+        <div class="arch-block-label">Marketing & CRM</div>
         <ul class="arch-list">
-          <li>— Auth protocol</li>
-          <li>— Encryption at rest/transit</li>
-          <li>— Rate limiting</li>
-          <li>— Secrets management</li>
+          <li>HubSpot — CRM + franchise pipeline</li>
+          <li>Klaviyo — email marketing + automations</li>
+          <li>Segment — customer data platform</li>
+          <li>Instagram / TikTok APIs — content sharing</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Analytics</div>
+        <ul class="arch-list">
+          <li>Mixpanel — product analytics (app)</li>
+          <li>Metabase — internal business dashboards</li>
+          <li>PostHog — feature flags + A/B testing</li>
+          <li>Google Analytics 4 — web traffic</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">DevOps & Monitoring</div>
+        <ul class="arch-list">
+          <li>GitHub Actions — CI/CD pipeline</li>
+          <li>Docker + ECS — containerisation</li>
+          <li>Datadog — APM + infrastructure monitoring</li>
+          <li>Sentry — error tracking (app + backend)</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Franchise Portal</div>
+        <ul class="arch-list">
+          <li>Dedicated portal for franchise operators</li>
+          <li>Revenue reporting + royalty calculation</li>
+          <li>Brand asset library + training materials</li>
+          <li>Support ticketing + SLA tracking</li>
         </ul>
       </div>
     </div>
@@ -100,94 +250,89 @@
   <!-- Data Flow -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Data Flow</span>
-      <span class="badge badge-muted">Edit me</span>
+      <span class="card-title">Core Data Flows</span>
+      <span class="badge badge-muted">How the system works end-to-end</span>
     </div>
-    <div class="placeholder">
-      <strong>✦ Placeholder —</strong> Walk through the data flow step by step. Example: (1) User submits input via UI → (2) API validates and queues request → (3) Worker processes with LLM → (4) Result stored in DB → (5) User notified. Be explicit about where data lives and moves.
-    </div>
-    <div class="divider"></div>
-    <div class="card-title" style="margin-bottom:12px; font-size:13px;">Key Data Entities</div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Entity</th>
-            <th>Description</th>
-            <th>Storage</th>
-            <th>Access</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>User</td><td>— describe —</td><td>— e.g. PostgreSQL —</td><td>— e.g. Auth token —</td></tr>
-          <tr><td>Entity 2</td><td>— describe —</td><td>— fill in —</td><td>— fill in —</td></tr>
-          <tr><td>Entity 3</td><td>— describe —</td><td>— fill in —</td><td>— fill in —</td></tr>
-          <tr><td>Entity 4</td><td>— describe —</td><td>— fill in —</td><td>— fill in —</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Infrastructure Diagram -->
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">Infrastructure Diagram</span>
-      <span class="badge badge-muted">Edit me</span>
-    </div>
-    <div class="placeholder" style="font-family: 'SF Mono', monospace; font-style: normal; font-size: 12px; line-height: 1.9; text-align: left;">
-<pre style="color: var(--text-muted); background: none; border: none; padding:0;">
-  ┌─────────────────────────────────────────────────┐
-  │                   Internet                       │
-  └────────────────────┬────────────────────────────┘
-                       │
-  ┌────────────────────▼────────────────────────────┐
-  │            CDN / Load Balancer                   │  ← fill in your provider
-  └──────────────┬──────────────────────────────────┘
-                 │
-  ┌──────────────▼──────────┐  ┌────────────────────┐
-  │   Frontend (Web App)    │  │  API / Backend      │  ← fill in
-  │   — framework here —    │  │  — runtime here —   │
-  └─────────────────────────┘  └──────────┬──────────┘
-                                           │
-                              ┌────────────▼──────────┐
-                              │   Database / Storage   │  ← fill in
-                              └────────────────────────┘
-
-  ✦  Replace this placeholder with your real infrastructure diagram.
-</pre>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="arch-block">
+        <div class="arch-block-label">Court Booking Flow</div>
+        <div style="font-size:13px; color:var(--text-secondary); display:flex; align-items:center; flex-wrap:wrap; gap:6px; line-height:2;">
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Player opens app</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Views real-time court availability</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Selects slot (Redis lock prevents double-booking)</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Payment via Telr</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Booking confirmed (DB write)</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">QR code sent to player</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Smart lock activated at court time</span>
+        </div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Matchmaking Flow</div>
+        <div style="font-size:13px; color:var(--text-secondary); display:flex; align-items:center; flex-wrap:wrap; gap:6px; line-height:2;">
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Player posts open game request</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">ML model scores skill-compatible players</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Push notification sent to top matches</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Player accepts → booking auto-created</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Post-match result logged → ELO updated</span>
+        </div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Franchise Revenue Flow</div>
+        <div style="font-size:13px; color:var(--text-secondary); display:flex; align-items:center; flex-wrap:wrap; gap:6px; line-height:2;">
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Franchise location processes booking</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Revenue logged in platform</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Monthly royalty (6%) auto-calculated</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Franchise dashboard updated</span> →
+          <span style="background:var(--bg-hover); padding:3px 10px; border-radius:20px; border:1px solid var(--border);">Royalty invoice generated → Stripe billing</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Security Model -->
+  <!-- Security -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Security Model</span>
-      <span class="badge badge-orange">Important</span>
+      <span class="card-title">Security & Compliance</span>
+      <span class="badge badge-orange">UAE Data Residency Required</span>
     </div>
     <div class="grid-2">
       <div class="arch-block">
-        <div class="arch-block-label">Authentication & Authorization</div>
-        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
-          <strong>✦</strong> How are users authenticated? How are permissions enforced? What roles exist?
-        </div>
+        <div class="arch-block-label">Authentication & Access</div>
+        <ul class="arch-list">
+          <li>JWT tokens with 15-min expiry + refresh tokens</li>
+          <li>OAuth2 social login (Google, Apple)</li>
+          <li>Role-based access: Player / Staff / Manager / Owner / Franchise</li>
+          <li>MFA for all operator accounts</li>
+          <li>API key rotation for franchise integrations</li>
+        </ul>
       </div>
       <div class="arch-block">
         <div class="arch-block-label">Data Protection</div>
-        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
-          <strong>✦</strong> Encryption in transit (TLS), at rest, key management. What data is PII? How is it handled?
-        </div>
+        <ul class="arch-list">
+          <li>All data stored in AWS UAE region (PDPL compliance)</li>
+          <li>AES-256 encryption at rest</li>
+          <li>TLS 1.3 for all data in transit</li>
+          <li>Payment data handled by Telr (PCI-DSS, never stored)</li>
+          <li>GDPR-ready data export and deletion API</li>
+        </ul>
       </div>
       <div class="arch-block">
-        <div class="arch-block-label">Compliance</div>
-        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
-          <strong>✦</strong> GDPR, SOC2, HIPAA, or other compliance requirements relevant to your business.
-        </div>
+        <div class="arch-block-label">UAE Compliance</div>
+        <ul class="arch-list">
+          <li>UAE PDPL (Personal Data Protection Law) compliant</li>
+          <li>Data localisation: all UAE user data stays in UAE region</li>
+          <li>Arabic language support in app and comms</li>
+          <li>UAE commercial licensing documentation ready</li>
+        </ul>
       </div>
       <div class="arch-block">
-        <div class="arch-block-label">Threat Model</div>
-        <div class="placeholder" style="border:none; padding:0; font-size:12.5px;">
-          <strong>✦</strong> Key risks and mitigations. What are your main attack vectors and how are they addressed?
-        </div>
+        <div class="arch-block-label">Infrastructure Security</div>
+        <ul class="arch-list">
+          <li>WAF (Web Application Firewall) on all public endpoints</li>
+          <li>DDoS protection via AWS Shield</li>
+          <li>VPC with private subnets for all databases</li>
+          <li>Automated vulnerability scanning in CI/CD</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -195,13 +340,40 @@
   <!-- Scalability -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Scalability & Constraints</span>
-      <span class="badge badge-muted">Edit me</span>
+      <span class="card-title">Scalability — From 1 Club to GCC Network</span>
+      <span class="badge badge-green">Multi-region ready</span>
     </div>
-    <div class="placeholder">
-      <strong>✦ Placeholder —</strong> What are the current bottlenecks? At what scale does the architecture need to change? What are the known limitations of the current design and what does the v2 architecture look like?
+    <div class="grid-3">
+      <div class="arch-block">
+        <div class="arch-block-label">Year 1 — Single Club</div>
+        <ul class="arch-list">
+          <li>Monorepo architecture, single deployment</li>
+          <li>~2,500 MAU, low infra cost (~$800/mo AWS)</li>
+          <li>Single PostgreSQL instance (RDS)</li>
+          <li>Manual ops with lightweight tooling</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Year 2 — Multi-Location</div>
+        <ul class="arch-list">
+          <li>Microservices split: booking / wellness / commerce</li>
+          <li>Read replicas for DB as load increases</li>
+          <li>Franchise portal as separate service</li>
+          <li>~20K MAU, scaled infrastructure</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Year 3 — GCC Expansion</div>
+        <ul class="arch-list">
+          <li>Multi-region deployment (UAE + KSA)</li>
+          <li>App B2B — white-label for external clubs</li>
+          <li>Full microservices, Kubernetes orchestration</li>
+          <li>~75K MAU, enterprise-grade reliability</li>
+        </ul>
+      </div>
     </div>
   </div>
+
 </main>
 
 <script src="assets/app.js"></script>
