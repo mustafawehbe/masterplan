@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Masterplan — Financial Statements</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .ten-yr table th, .ten-yr table td { font-size: 12px; padding: 9px 12px; white-space: nowrap; }
+    .ten-yr table th { font-size: 11px; }
+    .yr-label { color: var(--accent-light); font-weight: 700; }
+    .positive { color: var(--green); font-weight: 600; }
+    .muted-row td { color: var(--text-muted); font-size: 11.5px; }
+    .total-row td { border-top: 2px solid var(--accent); font-weight: 700; font-size: 13px; }
+    .section-break { height: 1px; background: var(--border-strong); }
+    .highlight-row { background: var(--accent-bg); }
+    .highlight-row td { color: var(--accent-light); }
+    .green-row { background: var(--green-bg); }
+    .green-row td { color: var(--green); }
+  </style>
 </head>
 <body>
 
@@ -16,625 +29,485 @@
       <div class="page-icon">◉</div>
       <h2>Financial Statements</h2>
     </div>
-    <p>Based on: $2M USD initial investment · 8 padel courts · 400 AED/session · $900K USD fixed overhead · 10 operating months · Wellness: HBOT 600 AED · Sauna 100 AED · Ice Bath 150 AED</p>
+    <p>10-year P&L model · 40,000 sqft · 8 padel courts · 2.5M AED rent (+5%/yr) · Rent target ≤ 20% of revenue</p>
   </div>
 
-  <!-- KPI Headlines -->
+  <!-- KPI Top Line -->
   <div class="grid-4">
     <div class="stat-card">
       <div class="stat-label">Year 1 Revenue</div>
-      <div class="stat-value" style="color:var(--green);">15.4M</div>
-      <div class="stat-sub">AED ($4.2M USD)</div>
+      <div class="stat-value" style="color:var(--green);">16.7M</div>
+      <div class="stat-sub">AED — 134% of 5× rent target</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">EBITDA</div>
-      <div class="stat-value" style="color:var(--green);">9.0M</div>
-      <div class="stat-sub">AED — 58.7% margin</div>
+      <div class="stat-label">Year 1 EBITDA</div>
+      <div class="stat-value" style="color:var(--green);">9.7M</div>
+      <div class="stat-sub">AED — 58.3% margin</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Net Profit</div>
-      <div class="stat-value" style="color:var(--green);">7.3M</div>
-      <div class="stat-sub">AED ($2.0M USD) — 47%</div>
+      <div class="stat-label">10-Year Cumulative Profit</div>
+      <div class="stat-value" style="color:var(--green);">161M</div>
+      <div class="stat-sub">AED (~$43.8M USD)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Payback Period</div>
-      <div class="stat-value">~4 mo</div>
-      <div class="stat-sub">On $2M USD investment</div>
+      <div class="stat-label">Return on $2M Investment</div>
+      <div class="stat-value" style="color:var(--green);">43×</div>
+      <div class="stat-sub">over 10 years</div>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- Revenue Breakdown -->
+  <!-- Space Allocation -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Revenue Breakdown — Annual</span>
-      <span class="badge badge-green">All Streams · Year 1</span>
+      <span class="card-title">40,000 sqft Warehouse — Space Allocation</span>
+      <span class="badge badge-blue">3,716 sqm total</span>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Revenue Stream</th>
-            <th>Calculation</th>
-            <th>AED / Year</th>
-            <th>USD / Year</th>
-            <th>% of Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Padel Court Bookings</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">8 courts × 7 sessions/day × 400 AED × 300 days</td>
-            <td style="color:var(--green);">6,720,000</td>
-            <td style="color:var(--green);">$1,831,000</td>
-            <td>43.6%</td>
-          </tr>
-          <tr>
-            <td><strong>Memberships</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">400 members × 800 AED/mo × 10 months</td>
-            <td style="color:var(--green);">3,200,000</td>
-            <td style="color:var(--green);">$872,000</td>
-            <td>20.8%</td>
-          </tr>
-          <tr>
-            <td><strong>HBOT (Hyperbaric O₂)</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">2 chambers × 6 sessions/day × 600 AED × 300 days</td>
-            <td style="color:var(--green);">2,160,000</td>
-            <td style="color:var(--green);">$589,000</td>
-            <td>14.0%</td>
-          </tr>
-          <tr>
-            <td><strong>Sauna</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">15 sessions/day × 100 AED × 300 days</td>
-            <td>450,000</td>
-            <td>$123,000</td>
-            <td>2.9%</td>
-          </tr>
-          <tr>
-            <td><strong>Ice Bath</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">15 sessions/day × 150 AED × 300 days</td>
-            <td>675,000</td>
-            <td>$184,000</td>
-            <td>4.4%</td>
-          </tr>
-          <tr>
-            <td><strong>Padel Equipment Shop</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">In-club shop + DTC online</td>
-            <td>800,000</td>
-            <td>$218,000</td>
-            <td>5.2%</td>
-          </tr>
-          <tr>
-            <td><strong>F&B / Café</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">3,000 AED/day × 300 days</td>
-            <td>900,000</td>
-            <td>$245,000</td>
-            <td>5.8%</td>
-          </tr>
-          <tr>
-            <td><strong>App Subscriptions</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">Early adopter base, beta year</td>
-            <td>200,000</td>
-            <td>$54,000</td>
-            <td>1.3%</td>
-          </tr>
-          <tr>
-            <td><strong>Tournaments</strong></td>
-            <td style="color:var(--text-muted); font-size:12px;">4 events × 75K AED avg (entries + sponsorship)</td>
-            <td>300,000</td>
-            <td>$82,000</td>
-            <td>1.9%</td>
-          </tr>
-          <tr style="background: var(--bg-secondary);">
-            <td><strong>TOTAL REVENUE</strong></td>
-            <td></td>
-            <td style="color:var(--green); font-weight:700; font-size:15px;">15,405,000</td>
-            <td style="color:var(--green); font-weight:700;">$4,198,000</td>
-            <td style="font-weight:700;">100%</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="grid-4">
+      <div class="arch-block">
+        <div class="arch-block-label">Padel Courts</div>
+        <div style="font-size:22px; font-weight:700; color:var(--text-primary);">17,200 sqft</div>
+        <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">8 courts × 200 sqm each · 43% of space · Primary revenue driver</div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Wellness Suite</div>
+        <div style="font-size:22px; font-weight:700; color:var(--text-primary);">3,230 sqft</div>
+        <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">HBOT (×2) · Sauna · Ice Bath · Changing rooms · 8% of space</div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Member Areas</div>
+        <div style="font-size:22px; font-weight:700; color:var(--text-primary);">5,380 sqft</div>
+        <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Lounge · Reception · F&B · Equipment Shop · Showers · 13%</div>
+      </div>
+      <div class="arch-block">
+        <div class="arch-block-label">Operations + Future</div>
+        <div style="font-size:22px; font-weight:700; color:var(--text-primary);">14,190 sqft</div>
+        <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Office · Corridors · Back-of-house · Flex expansion space · 35%</div>
+      </div>
+    </div>
+    <div class="arch-block" style="margin-top:12px;">
+      <div class="arch-block-label">Revenue per sqft</div>
+      <div style="display:flex; gap:24px; font-size:13px; color:var(--text-secondary);">
+        <span>Year 1: <strong style="color:var(--text-primary);">417 AED/sqft</strong></span>
+        <span>Year 5: <strong style="color:var(--text-primary);">700 AED/sqft</strong></span>
+        <span>Year 10: <strong style="color:var(--text-primary);">994 AED/sqft</strong></span>
+        <span style="color:var(--text-muted);">Rent paid: 62.5 AED/sqft/year (Year 1)</span>
+      </div>
     </div>
   </div>
 
-  <!-- Full P&L Quarterly -->
+  <!-- Court Economics -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Profit & Loss — Quarterly (Year 1)</span>
-      <span class="badge badge-orange">AED · 10 operating months · Closed Jul–Aug</span>
+      <span class="card-title">Per-Court Economics — 8 Courts</span>
+      <span class="badge badge-orange">300K AED profit per court</span>
+    </div>
+    <div class="grid-2">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Court Revenue Driver</th><th>Year 1</th><th>Year 5</th><th>Year 10</th></tr></thead>
+          <tbody>
+            <tr><td>Sessions per day</td><td>8.3</td><td>9.6</td><td>11.4</td></tr>
+            <tr><td>Rate per session (AED)</td><td>400</td><td>430</td><td>450</td></tr>
+            <tr><td>Operating days</td><td>300</td><td>300</td><td>300</td></tr>
+            <tr><td>Revenue per court (AED)</td><td>996,000</td><td>1,237,000</td><td>1,539,000</td></tr>
+            <tr><td>Direct cost per court (AED)</td><td>(694,000)</td><td>(838,000)</td><td>(989,000)</td></tr>
+            <tr><td><strong>Profit per court (AED)</strong></td><td style="color:var(--green);">302,000</td><td style="color:var(--green);">399,000</td><td style="color:var(--green);">550,000</td></tr>
+            <tr><td><strong>Court profit margin</strong></td><td style="color:var(--green);">30.3%</td><td style="color:var(--green);">32.3%</td><td style="color:var(--green);">35.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>8 Courts Combined</th><th>Year 1</th><th>Year 5</th><th>Year 10</th></tr></thead>
+          <tbody>
+            <tr><td>Total court revenue (AED)</td><td style="color:var(--green);">7,970,000</td><td style="color:var(--green);">9,896,000</td><td style="color:var(--green);">12,312,000</td></tr>
+            <tr><td>Court revenue as % of total</td><td>47.7%</td><td>35.3%</td><td>31.0%</td></tr>
+            <tr><td>Total court profit (AED)</td><td style="color:var(--green);">2,416,000</td><td style="color:var(--green);">3,192,000</td><td style="color:var(--green);">4,400,000</td></tr>
+            <tr><td>Rent covered by courts alone</td><td>319%</td><td>326%</td><td>318%</td></tr>
+            <tr><td>Break-even courts to cover rent</td><td colspan="3" style="color:var(--text-muted); font-size:12px;">3 courts at full utilisation cover Year 1 rent entirely</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10-Year P&L -->
+  <div class="card ten-yr">
+    <div class="card-header">
+      <span class="card-title">10-Year P&L — Full Model</span>
+      <span class="badge badge-green">AED · Single Location · 2027–2036</span>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Line Item</th>
-            <th>Q1 (Jan–Mar)</th>
-            <th>Q2 (Apr–Jun)</th>
-            <th>Q3 (Sep only)</th>
-            <th>Q4 (Oct–Dec)</th>
-            <th>Full Year</th>
+            <th class="yr-label">Y1 2027</th>
+            <th class="yr-label">Y2 2028</th>
+            <th class="yr-label">Y3 2029</th>
+            <th class="yr-label">Y4 2030</th>
+            <th class="yr-label">Y5 2031</th>
+            <th class="yr-label">Y6 2032</th>
+            <th class="yr-label">Y7 2033</th>
+            <th class="yr-label">Y8 2034</th>
+            <th class="yr-label">Y9 2035</th>
+            <th class="yr-label">Y10 2036</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Revenue -->
-          <tr>
-            <td><strong>Total Revenue</strong></td>
-            <td style="color:var(--green);">4,622,000</td>
-            <td style="color:var(--green);">4,005,000</td>
-            <td style="color:var(--green);">2,157,000</td>
-            <td style="color:var(--green);">4,621,000</td>
-            <td style="color:var(--green); font-weight:700;">15,405,000</td>
+
+          <!-- REVENUE -->
+          <tr class="muted-row">
+            <td colspan="11" style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:0.8px; padding-top:12px;">REVENUE (AED)</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Court Bookings</td>
-            <td>2,016,000</td>
-            <td>1,747,000</td>
-            <td>941,000</td>
-            <td>2,016,000</td>
-            <td>6,720,000</td>
+            <td>Padel Courts (8)</td>
+            <td>7,970,000</td><td>8,800,000</td><td>9,600,000</td><td>10,400,000</td><td>11,200,000</td>
+            <td>12,000,000</td><td>12,000,000</td><td>12,400,000</td><td>12,800,000</td><td>13,200,000</td>
+          </tr>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">Revenue per court</td>
+            <td>996K</td><td>1.10M</td><td>1.20M</td><td>1.30M</td><td>1.40M</td>
+            <td>1.50M</td><td>1.50M</td><td>1.55M</td><td>1.60M</td><td>1.65M</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Memberships</td>
-            <td>960,000</td>
-            <td>832,000</td>
-            <td>448,000</td>
-            <td>960,000</td>
-            <td>3,200,000</td>
+            <td>Memberships</td>
+            <td>3,200,000</td><td>4,000,000</td><td>4,800,000</td><td>5,600,000</td><td>6,400,000</td>
+            <td>7,200,000</td><td>8,000,000</td><td>8,400,000</td><td>8,800,000</td><td>9,200,000</td>
+          </tr>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">Active members</td>
+            <td>400</td><td>500</td><td>600</td><td>700</td><td>800</td>
+            <td>900</td><td>1,000</td><td>1,050</td><td>1,100</td><td>1,150</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Wellness (HBOT + Sauna + Ice)</td>
-            <td>985,500</td>
-            <td>854,100</td>
-            <td>460,500</td>
-            <td>984,900</td>
-            <td>3,285,000</td>
+            <td>Wellness (HBOT · Sauna · Ice)</td>
+            <td>3,285,000</td><td>3,500,000</td><td>3,800,000</td><td>4,100,000</td><td>4,400,000</td>
+            <td>4,700,000</td><td>5,000,000</td><td>5,200,000</td><td>5,400,000</td><td>5,600,000</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Equipment + F&B + App + Tours</td>
-            <td>660,500</td>
-            <td>571,900</td>
-            <td>307,500</td>
-            <td>660,100</td>
-            <td>2,200,000</td>
+            <td>Padel Equipment Shop</td>
+            <td>800,000</td><td>1,000,000</td><td>1,300,000</td><td>1,600,000</td><td>2,000,000</td>
+            <td>2,400,000</td><td>2,800,000</td><td>3,200,000</td><td>3,600,000</td><td>4,000,000</td>
+          </tr>
+          <tr>
+            <td>F&B / Café</td>
+            <td>900,000</td><td>1,000,000</td><td>1,100,000</td><td>1,200,000</td><td>1,300,000</td>
+            <td>1,400,000</td><td>1,500,000</td><td>1,550,000</td><td>1,600,000</td><td>1,650,000</td>
+          </tr>
+          <tr>
+            <td>App Subscriptions</td>
+            <td>200,000</td><td>400,000</td><td>700,000</td><td>1,000,000</td><td>1,500,000</td>
+            <td>2,000,000</td><td>2,500,000</td><td>3,000,000</td><td>3,500,000</td><td>4,000,000</td>
+          </tr>
+          <tr>
+            <td>Tournaments + Sponsorship</td>
+            <td>300,000</td><td>500,000</td><td>800,000</td><td>1,000,000</td><td>1,200,000</td>
+            <td>1,500,000</td><td>1,700,000</td><td>1,900,000</td><td>2,000,000</td><td>2,100,000</td>
+          </tr>
+          <tr class="total-row" style="background:var(--bg-secondary);">
+            <td><strong>TOTAL REVENUE</strong></td>
+            <td class="positive">16,655,000</td><td class="positive">19,200,000</td><td class="positive">22,100,000</td>
+            <td class="positive">24,900,000</td><td class="positive">28,000,000</td><td class="positive">31,200,000</td>
+            <td class="positive">33,500,000</td><td class="positive">35,650,000</td><td class="positive">37,700,000</td>
+            <td class="positive">39,750,000</td>
           </tr>
 
-          <!-- COGS -->
-          <tr style="border-top: 1px solid var(--border);">
-            <td><strong>Cost of Revenue (COGS)</strong></td>
-            <td style="color:var(--accent-light);">(691,500)</td>
-            <td style="color:var(--accent-light);">(599,300)</td>
-            <td style="color:var(--accent-light);">(322,900)</td>
-            <td style="color:var(--accent-light);">(691,300)</td>
-            <td style="color:var(--accent-light);">(2,305,000)</td>
+          <!-- RENT CHECK -->
+          <tr class="muted-row">
+            <td colspan="11" style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:0.8px; padding-top:12px;">RENT BENCHMARK (AED)</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Padel coaches (6 × 15K AED/mo)</td>
-            <td>(270,000)</td>
-            <td>(270,000)</td>
-            <td>(90,000)</td>
-            <td>(270,000)</td>
-            <td>(900,000)</td>
+            <td>Rent (2.5M · +5%/yr)</td>
+            <td>2,500,000</td><td>2,625,000</td><td>2,756,250</td><td>2,894,063</td><td>3,038,766</td>
+            <td>3,190,704</td><td>3,350,239</td><td>3,517,751</td><td>3,693,639</td><td>3,878,321</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Wellness staff (HBOT + attendants)</td>
-            <td>(120,000)</td>
-            <td>(120,000)</td>
-            <td>(40,000)</td>
-            <td>(120,000)</td>
-            <td>(400,000)</td>
+            <td>Required Revenue (5× rent)</td>
+            <td>12,500,000</td><td>13,125,000</td><td>13,781,250</td><td>14,470,313</td><td>15,193,828</td>
+            <td>15,953,520</td><td>16,751,196</td><td>17,588,756</td><td>18,468,194</td><td>19,391,604</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Revenue surplus over target</strong></td>
+            <td>+4,155,000</td><td>+6,075,000</td><td>+8,319,000</td><td>+10,430,000</td><td>+12,806,000</td>
+            <td>+15,246,000</td><td>+16,749,000</td><td>+18,061,000</td><td>+19,232,000</td><td>+20,358,000</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Equipment COGS (40%)</td>
-            <td>(96,000)</td>
-            <td>(96,000)</td>
-            <td>(32,000)</td>
-            <td>(96,000)</td>
-            <td>(320,000)</td>
+            <td><strong>Rent as % of revenue</strong></td>
+            <td style="color:var(--green);">15.0%</td><td style="color:var(--green);">13.7%</td><td style="color:var(--green);">12.5%</td>
+            <td style="color:var(--green);">11.6%</td><td style="color:var(--green);">10.9%</td><td style="color:var(--green);">10.2%</td>
+            <td style="color:var(--green);">10.0%</td><td style="color:var(--green);">9.9%</td><td style="color:var(--green);">9.8%</td>
+            <td style="color:var(--green);">9.8%</td>
           </tr>
-          <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">F&B COGS (35%) + consumables</td>
-            <td>(205,500)</td>
-            <td>(113,300)</td>
-            <td>(160,900)</td>
-            <td>(205,300)</td>
-            <td>(685,000)</td>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">Target ≤ 20% · Actual</td>
+            <td>✓ Under</td><td>✓ Under</td><td>✓ Under</td><td>✓ Under</td><td>✓ Under</td>
+            <td>✓ Under</td><td>✓ Under</td><td>✓ Under</td><td>✓ Under</td><td>✓ Under</td>
           </tr>
 
-          <!-- Gross Profit -->
-          <tr style="border-top: 1px solid var(--border-strong); background:var(--bg-secondary);">
-            <td><strong>Gross Profit</strong></td>
-            <td style="color:var(--green);">3,930,500</td>
-            <td style="color:var(--green);">3,405,700</td>
-            <td style="color:var(--green);">1,834,100</td>
-            <td style="color:var(--green);">3,929,700</td>
-            <td style="color:var(--green); font-weight:700;">13,100,000</td>
+          <!-- COSTS -->
+          <tr class="muted-row">
+            <td colspan="11" style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:0.8px; padding-top:12px;">COSTS (AED)</td>
           </tr>
           <tr>
-            <td style="color:var(--text-muted); font-size:12px;">Gross Margin</td>
-            <td style="color:var(--text-muted); font-size:12px;">85.1%</td>
-            <td style="color:var(--text-muted); font-size:12px;">85.0%</td>
-            <td style="color:var(--text-muted); font-size:12px;">85.0%</td>
-            <td style="color:var(--text-muted); font-size:12px;">85.0%</td>
-            <td style="color:var(--text-muted); font-size:12px; font-weight:600;">85.0%</td>
-          </tr>
-
-          <!-- OPEX -->
-          <tr style="border-top: 1px solid var(--border);">
-            <td><strong>Operating Expenses</strong></td>
-            <td style="color:var(--accent-light);">(1,215,900)</td>
-            <td style="color:var(--accent-light);">(1,215,900)</td>
-            <td style="color:var(--accent-light);">(405,300)</td>
-            <td style="color:var(--accent-light);">(1,215,900)</td>
-            <td style="color:var(--accent-light);">(4,053,000)</td>
+            <td>Rent</td>
+            <td>(2,500,000)</td><td>(2,625,000)</td><td>(2,756,250)</td><td>(2,894,063)</td><td>(3,038,766)</td>
+            <td>(3,190,704)</td><td>(3,350,239)</td><td>(3,517,751)</td><td>(3,693,639)</td><td>(3,878,321)</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Rent + SG&A ($900K USD)</td>
-            <td>(990,900)</td>
-            <td>(990,900)</td>
-            <td>(330,300)</td>
-            <td>(990,900)</td>
-            <td>(3,303,000)</td>
+            <td>Direct Staff + COGS</td>
+            <td>(2,355,000)</td><td>(2,638,000)</td><td>(2,954,000)</td><td>(3,309,000)</td><td>(3,706,000)</td>
+            <td>(4,151,000)</td><td>(4,649,000)</td><td>(5,207,000)</td><td>(5,832,000)</td><td>(6,531,000)</td>
+          </tr>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">Coaches · Wellness · F&B · Equip staff</td>
+            <td>1,500K</td><td>1,680K</td><td>1,882K</td><td>2,107K</td><td>2,360K</td>
+            <td>2,643K</td><td>2,960K</td><td>3,315K</td><td>3,713K</td><td>4,158K</td>
+          </tr>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">Product COGS (equip + F&B + wellness)</td>
+            <td>855K</td><td>958K</td><td>1,072K</td><td>1,202K</td><td>1,346K</td>
+            <td>1,508K</td><td>1,689K</td><td>1,892K</td><td>2,119K</td><td>2,373K</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Marketing & PR</td>
-            <td>(120,000)</td>
-            <td>(120,000)</td>
-            <td>(40,000)</td>
-            <td>(120,000)</td>
-            <td>(400,000)</td>
+            <td>Admin & Management Staff</td>
+            <td>(810,000)</td><td>(891,000)</td><td>(980,000)</td><td>(1,078,000)</td><td>(1,186,000)</td>
+            <td>(1,305,000)</td><td>(1,435,000)</td><td>(1,579,000)</td><td>(1,737,000)</td><td>(1,910,000)</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Technology & App</td>
-            <td>(60,000)</td>
-            <td>(60,000)</td>
-            <td>(20,000)</td>
-            <td>(60,000)</td>
-            <td>(200,000)</td>
+            <td>Other Overheads</td>
+            <td>(1,300,000)</td><td>(1,404,000)</td><td>(1,516,000)</td><td>(1,637,000)</td><td>(1,768,000)</td>
+            <td>(1,909,000)</td><td>(2,061,000)</td><td>(2,226,000)</td><td>(2,404,000)</td><td>(2,596,000)</td>
           </tr>
-          <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Insurance + Legal</td>
-            <td>(45,000)</td>
-            <td>(45,000)</td>
-            <td>(15,000)</td>
-            <td>(45,000)</td>
-            <td>(150,000)</td>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">Utilities · Marketing · Insurance · Tech · Maintenance</td>
+            <td colspan="10" style="font-size:11px;">Growing at 8%/year with business scale</td>
+          </tr>
+          <tr style="border-top:1px solid var(--border-strong); background:var(--bg-secondary);">
+            <td><strong>TOTAL COSTS</strong></td>
+            <td style="color:var(--accent-light);">(6,965,000)</td><td style="color:var(--accent-light);">(7,558,000)</td>
+            <td style="color:var(--accent-light);">(8,206,250)</td><td style="color:var(--accent-light);">(8,918,063)</td>
+            <td style="color:var(--accent-light);">(9,698,766)</td><td style="color:var(--accent-light);">(10,555,704)</td>
+            <td style="color:var(--accent-light);">(11,495,239)</td><td style="color:var(--accent-light);">(12,529,751)</td>
+            <td style="color:var(--accent-light);">(13,666,639)</td><td style="color:var(--accent-light);">(14,915,321)</td>
           </tr>
 
           <!-- EBITDA -->
-          <tr style="border-top: 1px solid var(--border-strong); background:var(--accent-bg);">
+          <tr class="highlight-row" style="border-top:1px solid var(--accent);">
             <td><strong>EBITDA</strong></td>
-            <td style="color:var(--green); font-weight:700;">2,714,600</td>
-            <td style="color:var(--green); font-weight:700;">2,189,800</td>
-            <td style="color:var(--green); font-weight:700;">1,428,800</td>
-            <td style="color:var(--green); font-weight:700;">2,713,800</td>
-            <td style="color:var(--green); font-weight:700; font-size:15px;">9,047,000</td>
+            <td>9,690,000</td><td>11,642,000</td><td>13,893,750</td><td>15,981,937</td><td>18,301,234</td>
+            <td>20,644,296</td><td>22,004,761</td><td>23,120,249</td><td>24,033,361</td><td>24,834,679</td>
           </tr>
-          <tr style="background:var(--accent-bg);">
-            <td style="color:var(--accent-light); font-size:12px;">EBITDA Margin</td>
-            <td style="color:var(--accent-light); font-size:12px;">58.7%</td>
-            <td style="color:var(--accent-light); font-size:12px;">54.7%</td>
-            <td style="color:var(--accent-light); font-size:12px;">66.2%</td>
-            <td style="color:var(--accent-light); font-size:12px;">58.7%</td>
-            <td style="color:var(--accent-light); font-size:12px; font-weight:600;">58.7%</td>
+          <tr class="highlight-row">
+            <td><strong>EBITDA Margin</strong></td>
+            <td>58.2%</td><td>60.6%</td><td>62.9%</td><td>64.2%</td><td>65.4%</td>
+            <td>66.2%</td><td>65.7%</td><td>64.8%</td><td>63.8%</td><td>62.5%</td>
           </tr>
 
-          <!-- Below EBITDA -->
-          <tr style="border-top: 1px solid var(--border);">
-            <td><strong>Depreciation & Amortisation</strong></td>
-            <td style="color:var(--text-muted);">(262,250)</td>
-            <td style="color:var(--text-muted);">(262,250)</td>
-            <td style="color:var(--text-muted);">(262,250)</td>
-            <td style="color:var(--text-muted);">(262,250)</td>
-            <td style="color:var(--text-muted);">(1,049,000)</td>
+          <!-- BELOW EBITDA -->
+          <tr class="muted-row">
+            <td colspan="11" style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:0.8px; padding-top:12px;">BELOW EBITDA</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12px;">$2M USD / 7-year straight line</td>
-            <td style="color:var(--text-muted); font-size:12px;"></td>
-            <td style="color:var(--text-muted); font-size:12px;"></td>
-            <td style="color:var(--text-muted); font-size:12px;"></td>
-            <td style="color:var(--text-muted); font-size:12px;"></td>
-            <td style="color:var(--text-muted); font-size:12px;">7,343,000 AED asset base</td>
+            <td>Depreciation & Amortisation</td>
+            <td>(1,049,000)</td><td>(1,049,000)</td><td>(1,049,000)</td><td>(1,049,000)</td><td>(1,049,000)</td>
+            <td>(1,049,000)</td><td>(1,049,000)</td><td style="color:var(--text-muted);">—</td>
+            <td style="color:var(--text-muted);">—</td><td style="color:var(--text-muted);">—</td>
+          </tr>
+          <tr class="muted-row">
+            <td style="padding-left:18px;">$2M USD / 7-yr straight line · Fully depreciated Y8</td>
+            <td colspan="10"></td>
           </tr>
           <tr>
-            <td><strong>EBIT (Operating Profit)</strong></td>
-            <td>2,452,350</td>
-            <td>1,927,550</td>
-            <td>1,166,550</td>
-            <td>2,451,550</td>
-            <td style="font-weight:700;">7,998,000</td>
+            <td>Interest Expense</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
           </tr>
           <tr>
-            <td><strong>Interest Expense</strong></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td><strong>UAE Corporate Tax (9%)</strong></td>
-            <td style="color:var(--text-muted);">(220,712)</td>
-            <td style="color:var(--text-muted);">(173,480)</td>
-            <td style="color:var(--text-muted);">(104,990)</td>
-            <td style="color:var(--text-muted);">(220,640)</td>
-            <td style="color:var(--text-muted);">(719,822)</td>
+            <td>UAE Corporate Tax (9%)</td>
+            <td>(779,490)</td><td>(953,280)</td><td>(1,155,638)</td><td>(1,343,925)</td><td>(1,552,611)</td>
+            <td>(1,763,567)</td><td>(1,885,529)</td><td>(2,080,822)</td><td>(2,163,002)</td><td>(2,235,121)</td>
           </tr>
 
-          <!-- Net Profit -->
-          <tr style="border-top: 2px solid var(--accent); background:var(--green-bg);">
+          <!-- NET PROFIT -->
+          <tr class="green-row" style="border-top:2px solid var(--green);">
             <td><strong>NET PROFIT</strong></td>
-            <td style="color:var(--green); font-weight:700;">2,231,638</td>
-            <td style="color:var(--green); font-weight:700;">1,754,070</td>
-            <td style="color:var(--green); font-weight:700;">1,061,560</td>
-            <td style="color:var(--green); font-weight:700;">2,230,910</td>
-            <td style="color:var(--green); font-weight:700; font-size:15px;">7,278,178</td>
+            <td>7,861,510</td><td>9,639,720</td><td>11,689,112</td><td>13,589,012</td><td>15,699,623</td>
+            <td>17,831,729</td><td>19,070,232</td><td>21,039,427</td><td>21,870,359</td><td>22,599,558</td>
           </tr>
-          <tr style="background:var(--green-bg);">
-            <td style="color:var(--green); font-size:12px;">Net Margin</td>
-            <td style="color:var(--green); font-size:12px;">48.3%</td>
-            <td style="color:var(--green); font-size:12px;">43.8%</td>
-            <td style="color:var(--green); font-size:12px;">49.2%</td>
-            <td style="color:var(--green); font-size:12px;">48.3%</td>
-            <td style="color:var(--green); font-size:12px; font-weight:700;">47.2%</td>
+          <tr class="green-row">
+            <td><strong>Net Margin</strong></td>
+            <td>47.2%</td><td>50.2%</td><td>52.9%</td><td>54.6%</td><td>56.1%</td>
+            <td>57.2%</td><td>56.9%</td><td>59.0%</td><td>58.0%</td><td>56.9%</td>
           </tr>
+
+          <!-- CUMULATIVE -->
+          <tr class="muted-row">
+            <td colspan="11" style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:0.8px; padding-top:12px;">CUMULATIVE</td>
+          </tr>
+          <tr style="background:var(--bg-secondary);">
+            <td><strong>Cumulative Net Profit</strong></td>
+            <td class="positive">7.9M</td><td class="positive">17.5M</td><td class="positive">29.2M</td>
+            <td class="positive">42.8M</td><td class="positive">58.5M</td><td class="positive">76.3M</td>
+            <td class="positive">95.4M</td><td class="positive">116.4M</td><td class="positive">138.3M</td>
+            <td class="positive">160.9M</td>
+          </tr>
+          <tr style="background:var(--bg-secondary);">
+            <td><strong>ROI on $2M USD (7.34M AED)</strong></td>
+            <td class="positive">1.1×</td><td class="positive">2.4×</td><td class="positive">3.9×</td>
+            <td class="positive">5.8×</td><td class="positive">8.0×</td><td class="positive">10.4×</td>
+            <td class="positive">13.0×</td><td class="positive">15.9×</td><td class="positive">18.8×</td>
+            <td class="positive">21.9×</td>
+          </tr>
+
         </tbody>
       </table>
     </div>
-    <div class="edit-hint">✎ &nbsp;All figures in <strong>AED</strong>. Exchange rate: 1 USD = 3.67 AED. Q3 reflects 1 operating month only (September) — club closed July & August.</div>
+    <div class="edit-hint">✎ &nbsp;All figures in <strong>AED</strong>. Exchange rate: 1 USD = 3.67 AED. D&A based on $2M USD ($7.34M AED) over 7 years, fully depreciated from Year 8. Rent grows at 5%/year as agreed.</div>
   </div>
 
-  <!-- Balance Sheet -->
+  <!-- Year 1 Quarterly P&L -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Balance Sheet — Day 1 (Post-Investment)</span>
-      <span class="badge badge-blue">$2M USD Deployed</span>
-    </div>
-    <div class="grid-2">
-      <div>
-        <div style="font-size:11px; font-weight:600; color:var(--green); text-transform:uppercase; letter-spacing:0.7px; margin-bottom:8px;">Assets</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Asset</th><th>AED</th></tr></thead>
-            <tbody>
-              <tr><td>Cash & Working Capital</td><td style="color:var(--green);">2,043,000</td></tr>
-              <tr><td>8 Courts + Fit-out</td><td>2,900,000</td></tr>
-              <tr><td>HBOT Chambers (×2)</td><td>800,000</td></tr>
-              <tr><td>Sauna + Ice Bath Units</td><td>300,000</td></tr>
-              <tr><td>App & Technology (IP)</td><td>900,000</td></tr>
-              <tr><td>Equipment Inventory</td><td>300,000</td></tr>
-              <tr><td>Deposits & Prepaid</td><td>300,000</td></tr>
-              <tr><td><strong>Total Assets</strong></td><td><strong>7,543,000</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:11px; font-weight:600; color:var(--accent-light); text-transform:uppercase; letter-spacing:0.7px; margin-bottom:8px;">Liabilities & Equity</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Item</th><th>AED</th></tr></thead>
-            <tbody>
-              <tr><td>Accounts Payable</td><td>200,000</td></tr>
-              <tr><td>Deferred Revenue (memberships)</td><td>320,000</td></tr>
-              <tr><td>Accrued Liabilities</td><td>100,000</td></tr>
-              <tr><td>Total Liabilities</td><td>620,000</td></tr>
-              <tr><td>Founder Equity ($2M USD)</td><td style="color:var(--green);">7,343,000</td></tr>
-              <tr><td>Retained Earnings</td><td>—</td></tr>
-              <tr><td><strong>Total L + Equity</strong></td><td><strong>7,543,000 ✓</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="arch-block" style="margin-top:14px;">
-      <div class="arch-block-label">End of Year 1 — Retained Earnings</div>
-      <div style="font-size:13px; color:var(--text-secondary);">After Year 1 net profit of <strong style="color:var(--green);">7,278,178 AED ($1.98M USD)</strong>, total equity grows to <strong style="color:var(--green);">14,621,178 AED ($3.98M USD)</strong> — a full return on the $2M investment within the first operating year.</div>
-    </div>
-  </div>
-
-  <!-- Cash Flow -->
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">Cash Flow — Year 1</span>
-      <span class="badge badge-muted">AED</span>
+      <span class="card-title">Year 1 — Quarterly P&L Breakdown</span>
+      <span class="badge badge-orange">AED · Closed Jul–Aug · Open 10 months</span>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Activity</th>
-            <th>Q1</th>
-            <th>Q2</th>
-            <th>Q3</th>
-            <th>Q4</th>
+            <th>Line Item</th>
+            <th>Q1 Jan–Mar (Peak)</th>
+            <th>Q2 Apr–Jun</th>
+            <th>Q3 Sep only</th>
+            <th>Q4 Oct–Dec (Peak)</th>
             <th>Full Year</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Operating Cash Flow</strong></td>
-            <td style="color:var(--green);">2,493,888</td>
-            <td style="color:var(--green);">2,016,320</td>
-            <td style="color:var(--green);">1,323,810</td>
-            <td style="color:var(--green);">2,493,160</td>
-            <td style="color:var(--green); font-weight:700;">8,327,178</td>
+            <td><strong>Total Revenue</strong></td>
+            <td style="color:var(--green);">4,997,000</td>
+            <td style="color:var(--green);">4,330,000</td>
+            <td style="color:var(--green);">2,331,000</td>
+            <td style="color:var(--green);">4,997,000</td>
+            <td style="color:var(--green); font-weight:700;">16,655,000</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Net Profit</td>
-            <td>2,231,638</td>
-            <td>1,754,070</td>
-            <td>1,061,560</td>
-            <td>2,230,910</td>
-            <td>7,278,178</td>
+            <td style="padding-left:18px; color:var(--text-muted); font-size:12.5px;">Courts + Memberships</td>
+            <td>3,351,000</td><td>2,905,000</td><td>1,566,000</td><td>3,351,000</td><td>11,173,000</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Add back: D&A (non-cash)</td>
-            <td>262,250</td>
-            <td>262,250</td>
-            <td>262,250</td>
-            <td>262,250</td>
-            <td>1,049,000</td>
+            <td style="padding-left:18px; color:var(--text-muted); font-size:12.5px;">Wellness (HBOT + Sauna + Ice)</td>
+            <td>985,500</td><td>854,100</td><td>460,500</td><td>984,900</td><td>3,285,000</td>
           </tr>
           <tr>
-            <td><strong>Investing Activities</strong></td>
-            <td style="color:var(--accent-light);">(7,343,000)</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td style="color:var(--accent-light);">(7,343,000)</td>
+            <td style="padding-left:18px; color:var(--text-muted); font-size:12.5px;">Equipment + F&B + App + Tours</td>
+            <td>660,500</td><td>570,900</td><td>304,500</td><td>661,100</td><td>2,197,000</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Club build + wellness equipment + app</td>
-            <td>(7,343,000)</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>(7,343,000)</td>
+            <td><strong>Total Costs</strong></td>
+            <td style="color:var(--accent-light);">(2,089,500)</td>
+            <td style="color:var(--accent-light);">(2,089,500)</td>
+            <td style="color:var(--accent-light);">(696,500)</td>
+            <td style="color:var(--accent-light);">(2,089,500)</td>
+            <td style="color:var(--accent-light);">(6,965,000)</td>
           </tr>
           <tr>
-            <td><strong>Financing Activities</strong></td>
-            <td style="color:var(--green);">7,343,000</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td style="color:var(--green);">7,343,000</td>
+            <td style="padding-left:18px; color:var(--text-muted); font-size:12.5px;">Rent (2.5M / 10 months)</td>
+            <td>(750,000)</td><td>(750,000)</td><td>(250,000)</td><td>(750,000)</td><td>(2,500,000)</td>
           </tr>
           <tr>
-            <td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Founder investment ($2M USD)</td>
-            <td>7,343,000</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>7,343,000</td>
+            <td style="padding-left:18px; color:var(--text-muted); font-size:12.5px;">Staff + COGS + Overheads</td>
+            <td>(1,339,500)</td><td>(1,339,500)</td><td>(446,500)</td><td>(1,339,500)</td><td>(4,465,000)</td>
           </tr>
-          <tr style="background:var(--green-bg);">
-            <td><strong>Net Cash Movement</strong></td>
-            <td style="color:var(--green);">2,493,888</td>
-            <td style="color:var(--green);">2,016,320</td>
-            <td style="color:var(--green);">1,323,810</td>
-            <td style="color:var(--green);">2,493,160</td>
-            <td style="color:var(--green); font-weight:700;">8,327,178</td>
+          <tr style="background:var(--accent-bg); border-top:1px solid var(--accent);">
+            <td><strong>EBITDA</strong></td>
+            <td style="color:var(--green); font-weight:700;">2,907,500</td>
+            <td style="color:var(--green); font-weight:700;">2,240,500</td>
+            <td style="color:var(--green); font-weight:700;">1,634,500</td>
+            <td style="color:var(--green); font-weight:700;">2,907,500</td>
+            <td style="color:var(--green); font-weight:700;">9,690,000</td>
           </tr>
-          <tr style="background:var(--green-bg);">
-            <td><strong>Closing Cash Balance</strong></td>
-            <td style="color:var(--green);">2,493,888</td>
-            <td style="color:var(--green);">4,510,208</td>
-            <td style="color:var(--green);">5,834,018</td>
-            <td style="color:var(--green); font-weight:700;">8,327,178</td>
-            <td style="color:var(--green); font-weight:700;">8,327,178</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- 3-Year Projections -->
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">3-Year Financial Projections</span>
-      <span class="badge badge-green">2026 → 2028 · AED</span>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th>Year 1</th>
-            <th>Year 2</th>
-            <th>Year 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Total Revenue (AED)</strong></td><td style="color:var(--green);">15,405,000</td><td style="color:var(--green);">33,200,000</td><td style="color:var(--green); font-weight:700;">68,000,000</td></tr>
-          <tr><td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Owned Club(s) Revenue</td><td>15,405,000</td><td>25,700,000</td><td>46,215,000</td></tr>
-          <tr><td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Franchise Fees + Royalties</td><td>—</td><td>5,100,000</td><td>14,550,000</td></tr>
-          <tr><td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">App Subscriptions</td><td>200,000</td><td>600,000</td><td>2,000,000</td></tr>
-          <tr><td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Padel Equipment Shop</td><td>800,000</td><td>1,600,000</td><td>4,000,000</td></tr>
-          <tr><td style="padding-left:22px; color:var(--text-muted); font-size:12.5px;">Tournaments + Sponsorship</td><td>300,000</td><td>700,000</td><td>2,000,000</td></tr>
-          <tr><td><strong>Gross Margin</strong></td><td>85.0%</td><td>84.5%</td><td>85.5%</td></tr>
           <tr style="background:var(--accent-bg);">
-            <td><strong>EBITDA (AED)</strong></td>
-            <td style="color:var(--green); font-weight:600;">9,047,000</td>
-            <td style="color:var(--green); font-weight:600;">18,260,000</td>
-            <td style="color:var(--green); font-weight:700; font-size:15px;">42,160,000</td>
+            <td style="font-size:12px; color:var(--accent-light);">EBITDA Margin</td>
+            <td style="font-size:12px; color:var(--accent-light);">58.2%</td>
+            <td style="font-size:12px; color:var(--accent-light);">51.7%</td>
+            <td style="font-size:12px; color:var(--accent-light);">70.1%</td>
+            <td style="font-size:12px; color:var(--accent-light);">58.2%</td>
+            <td style="font-size:12px; color:var(--accent-light);">58.2%</td>
           </tr>
-          <tr style="background:var(--accent-bg);"><td style="color:var(--accent-light); font-size:12px;">EBITDA Margin</td><td style="color:var(--accent-light); font-size:12px;">58.7%</td><td style="color:var(--accent-light); font-size:12px;">55.0%</td><td style="color:var(--accent-light); font-size:12px;">62.0%</td></tr>
+          <tr>
+            <td>D&A</td>
+            <td>(262,250)</td><td>(262,250)</td><td>(262,250)</td><td>(262,250)</td><td>(1,049,000)</td>
+          </tr>
+          <tr>
+            <td>Tax (9%)</td>
+            <td>(236,272)</td><td>(177,798)</td><td>(123,498)</td><td>(241,922)</td><td>(779,490)</td>
+          </tr>
+          <tr style="background:var(--green-bg); border-top:2px solid var(--green);">
+            <td><strong>NET PROFIT</strong></td>
+            <td style="color:var(--green); font-weight:700;">2,408,978</td>
+            <td style="color:var(--green); font-weight:700;">1,800,452</td>
+            <td style="color:var(--green); font-weight:700;">1,248,752</td>
+            <td style="color:var(--green); font-weight:700;">2,403,328</td>
+            <td style="color:var(--green); font-weight:700; font-size:15px;">7,861,510</td>
+          </tr>
           <tr style="background:var(--green-bg);">
-            <td><strong>Net Profit (AED)</strong></td>
-            <td style="color:var(--green); font-weight:600;">7,278,000</td>
-            <td style="color:var(--green); font-weight:600;">14,580,000</td>
-            <td style="color:var(--green); font-weight:700; font-size:15px;">35,600,000</td>
+            <td style="font-size:12px; color:var(--green);">Net Margin</td>
+            <td style="font-size:12px; color:var(--green);">48.2%</td>
+            <td style="font-size:12px; color:var(--green);">41.6%</td>
+            <td style="font-size:12px; color:var(--green);">53.6%</td>
+            <td style="font-size:12px; color:var(--green);">48.1%</td>
+            <td style="font-size:12px; color:var(--green); font-weight:700;">47.2%</td>
           </tr>
-          <tr style="background:var(--green-bg);"><td style="color:var(--green); font-size:12px;">Net Margin</td><td style="color:var(--green); font-size:12px;">47.2%</td><td style="color:var(--green); font-size:12px;">43.9%</td><td style="color:var(--green); font-size:12px;">52.4%</td></tr>
-          <tr><td><strong>Revenue (USD equiv.)</strong></td><td>$4.2M</td><td>$9.0M</td><td style="font-weight:700;">$18.5M</td></tr>
-          <tr><td><strong>Net Profit (USD equiv.)</strong></td><td>$2.0M</td><td>$3.97M</td><td style="font-weight:700;">$9.7M</td></tr>
-          <tr><td><strong>Owned Clubs</strong></td><td>1</td><td>2</td><td>3</td></tr>
-          <tr><td><strong>Franchise Locations</strong></td><td>—</td><td>5</td><td>15</td></tr>
-          <tr><td><strong>Total Members</strong></td><td>400</td><td>1,100</td><td>3,200</td></tr>
-          <tr><td><strong>App Users (MAU)</strong></td><td>2,500</td><td>20,000</td><td>75,000</td></tr>
-          <tr><td><strong>Team Size</strong></td><td>20</td><td>55</td><td>130</td></tr>
-          <tr><td><strong>Est. Valuation</strong></td><td>$15M</td><td>$50M</td><td>$200M+</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- Unit Economics -->
+  <!-- Investment Return Summary -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Unit Economics — Per Club (Mature Year)</span>
-      <span class="badge badge-blue">AED · Annual</span>
+      <span class="card-title">Investment Return Summary</span>
+      <span class="badge badge-green">$2M USD Initial Investment</span>
     </div>
-    <div class="grid-2">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Revenue Driver</th><th>Annual AED</th></tr></thead>
-          <tbody>
-            <tr><td>Court Bookings (8 courts)</td><td style="color:var(--green);">6,720,000</td></tr>
-            <tr><td>Memberships (400 × 800 × 10)</td><td style="color:var(--green);">3,200,000</td></tr>
-            <tr><td>HBOT (2 chambers)</td><td style="color:var(--green);">2,160,000</td></tr>
-            <tr><td>Sauna + Ice Bath</td><td style="color:var(--green);">1,125,000</td></tr>
-            <tr><td>Equipment + F&B</td><td style="color:var(--green);">1,700,000</td></tr>
-            <tr><td>App + Tournaments</td><td style="color:var(--green);">500,000</td></tr>
-            <tr><td><strong>Total Revenue / Club</strong></td><td style="color:var(--green); font-weight:700;">15,405,000</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Cost</th><th>Annual AED</th></tr></thead>
-          <tbody>
-            <tr><td>COGS (staff + product)</td><td style="color:var(--accent-light);">(2,305,000)</td></tr>
-            <tr><td>Rent + SG&A ($900K USD)</td><td style="color:var(--accent-light);">(3,303,000)</td></tr>
-            <tr><td>Marketing + Tech + Legal</td><td style="color:var(--accent-light);">(750,000)</td></tr>
-            <tr><td>D&A ($2M / 7yr)</td><td style="color:var(--text-muted);">(1,049,000)</td></tr>
-            <tr><td>Tax (9%)</td><td style="color:var(--text-muted);">(720,000)</td></tr>
-            <tr><td><strong>Net Profit / Club</strong></td><td style="color:var(--green); font-weight:700;">7,278,000</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div style="display:flex; gap:14px; margin-top:14px;">
-      <div class="arch-block" style="flex:1; text-align:center;">
-        <div class="arch-block-label">ROI on $2M USD</div>
-        <div style="font-size:28px; font-weight:700; color:var(--green);">99%</div>
-        <div style="font-size:12px; color:var(--text-secondary);">Year 1 net profit returns ~$2M USD on $2M invested</div>
-      </div>
-      <div class="arch-block" style="flex:1; text-align:center;">
+    <div class="grid-4">
+      <div class="arch-block" style="text-align:center;">
         <div class="arch-block-label">Payback Period</div>
-        <div style="font-size:28px; font-weight:700; color:var(--text-primary);">~4 mo</div>
-        <div style="font-size:12px; color:var(--text-secondary);">Investment fully recovered by end of Q1 Year 1</div>
+        <div style="font-size:32px; font-weight:700; color:var(--green);">&lt; 4 mo</div>
+        <div style="font-size:12px; color:var(--text-secondary);">$2M USD recovered within first operating quarter at 2.4M AED Q1 net profit ($653K USD)</div>
       </div>
-      <div class="arch-block" style="flex:1; text-align:center;">
-        <div class="arch-block-label">Revenue / Court / Day</div>
-        <div style="font-size:28px; font-weight:700; color:var(--text-primary);">2,800</div>
-        <div style="font-size:12px; color:var(--text-secondary);">AED per court per operating day (7 sessions × 400 AED)</div>
+      <div class="arch-block" style="text-align:center;">
+        <div class="arch-block-label">Year 1 ROI</div>
+        <div style="font-size:32px; font-weight:700; color:var(--green);">107%</div>
+        <div style="font-size:12px; color:var(--text-secondary);">7.86M AED net profit ($2.14M USD) on $2M investment in the first full year</div>
       </div>
-      <div class="arch-block" style="flex:1; text-align:center;">
-        <div class="arch-block-label">Revenue / Member / Year</div>
-        <div style="font-size:28px; font-weight:700; color:var(--text-primary);">38,513</div>
-        <div style="font-size:12px; color:var(--text-secondary);">AED per member per year across all revenue streams</div>
+      <div class="arch-block" style="text-align:center;">
+        <div class="arch-block-label">5-Year Net Profit</div>
+        <div style="font-size:32px; font-weight:700; color:var(--green);">58.5M</div>
+        <div style="font-size:12px; color:var(--text-secondary);">AED cumulative (~$15.9M USD) from a single location over 5 years</div>
+      </div>
+      <div class="arch-block" style="text-align:center;">
+        <div class="arch-block-label">10-Year Return</div>
+        <div style="font-size:32px; font-weight:700; color:var(--green);">21.9×</div>
+        <div style="font-size:12px; color:var(--text-secondary);">160.9M AED ($43.8M USD) total return on $2M invested — single location only, excludes franchise & GCC expansion</div>
+      </div>
+    </div>
+    <div class="arch-block" style="margin-top:14px;">
+      <div class="arch-block-label">Key Assumption Summary</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.9; display:flex; flex-wrap:wrap; gap:16px;">
+        <span>📍 <strong style="color:var(--text-primary);">Location:</strong> 40,000 sqft Dubai warehouse</span>
+        <span>🎾 <strong style="color:var(--text-primary);">Courts:</strong> 8 padel courts at 400 AED/session</span>
+        <span>🏢 <strong style="color:var(--text-primary);">Rent:</strong> 2.5M AED Year 1, +5%/yr — always ≤ 15% of revenue</span>
+        <span>💊 <strong style="color:var(--text-primary);">Wellness:</strong> HBOT 600 · Sauna 100 · Ice Bath 150 AED</span>
+        <span>👥 <strong style="color:var(--text-primary);">Members:</strong> 400 at launch → 1,150 by Year 10</span>
+        <span>📱 <strong style="color:var(--text-primary);">App:</strong> Growing from 200K to 4M AED/yr by Year 10</span>
+        <span>📦 <strong style="color:var(--text-primary);">Equipment:</strong> 800K → 4M AED by Year 10</span>
+        <span>💰 <strong style="color:var(--text-primary);">Tax:</strong> UAE 9% corporate tax on profits</span>
+        <span>📉 <strong style="color:var(--text-primary);">D&A:</strong> $2M USD / 7-year straight-line, zero from Year 8</span>
       </div>
     </div>
   </div>
