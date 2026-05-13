@@ -4,6 +4,7 @@ const pages = [
   { href: 'financial.html',      icon: '◉', label: 'Financial Statements' },
   { href: 'architecture.html',   icon: '⬡', label: 'Architecture' },
   { href: 'roadmap.html',        icon: '◷', label: 'Roadmap' },
+  { href: 'equipment.html',      icon: '⚙', label: 'Equipment Guide' },
 ];
 
 const EDIT_SELECTORS = '.placeholder, tbody td, .timeline-title, .timeline-desc, .stat-value, .stat-sub, .tag, .arch-list li';
